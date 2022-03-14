@@ -1,0 +1,247 @@
+\documentclass[11pt, answers]{exam}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{cancel}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[boxed]{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{multicol}
+
+%
+% Basic Document Settings
+%
+
+% \topmargin=-0.5in
+% \evensidemargin=0in
+% \oddsidemargin=0in
+% \textwidth=6.5in
+% \textheight=9.0in
+% \headsep=0.25in
+
+% \linespread{1.1}
+
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\pagestyle{headandfoot}
+\lhead{\hmwkClass\ : \hmwkType\ \#\hmwkNumber\ (Due \hmwkDue)}
+\cfoot{\thepage}
+% \renewcommand\headrulewidth{0.4pt}
+% \renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+\qformat{\hfill}
+
+\newcommand{\hmwkType}{Written}
+\newcommand{\hmwkNumber}{10}
+\newcommand{\hmwkClass}{VE 492}
+\newcommand{\hmwkDue}{July 31st, 2020 at 11:59pm}
+
+
+%
+% Title Page
+%
+
+\title{Homework \hmwkNumber\ \hmwkType}
+\date{\hmwkDue}
+
+%
+% Various Helper Commands
+%
+
+% space of real numbers \R
+\newcommand{\R}{\mathbb{R}}
+
+% expected value \EX
+\DeclareMathOperator{\EX}{\mathbb{E}}
+
+% For partial derivatives \pderiv{}{}
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% argmax \argmax
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% sign \sign
+\DeclareMathOperator{\sign}{sign}
+
+% norm \norm{}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% Keys
+\newcommand{\key}[1]{\fbox{{\sc #1}}}
+\newcommand{\ctrl}{\key{ctrl}--}
+\newcommand{\shift}{\key{shift}--}
+\newcommand{\run}{\key{run} \ }
+\newcommand{\runkey}[1]{\run \key{#1}}
+\newcommand{\extend}{\key{extend} \ }
+\newcommand{\kkey}[1]{\key{k$_{#1}$}}
+
+\begin{document}
+\maketitle
+
+%
+% Question 1
+%
+\begin{questions}
+\section{Propositional Logic 1}
+\question
+
+A logician tells to his son: ``If you don't finish your dinner, you will not play video games afterwards.''
+After the son finishes his meal, he is sent to bed right away.
+
+Which mistake did he make by thinking that he would be able to play video games after dinner?
+
+\end{questions}
+
+%
+% Question 2
+%
+\begin{questions}
+\section{Propositional Logic 2}
+\question
+
+Write the following sentences in CNF form.
+
+\begin{enumerate}[a.]
+\item $\neg (p \vee (q \wedge r))$
+\item $(\neg p \Rightarrow q) \vee \neg (q \wedge r)$
+\item $(p \Rightarrow \neg q) \Leftrightarrow ((q \wedge \neg r) \Rightarrow (\neg p))$
+\end{enumerate}
+
+\end{questions}
+
+
+
+%
+% Question 3
+%
+\begin{questions}
+\section{Propositional Logic 3}
+\question
+
+Consider a vocabulary with only four propositions, A, B, C, and D. How many models are there for the following sentences?
+
+\begin{enumerate}[a.]
+	\item $B \vee C$.
+	\item $\neg A\vee \neg B\vee \neg C\vee \neg D$.
+	\item $(A\Rightarrow B)\wedge A\wedge\neg B\wedge C\wedge D$.	
+\end{enumerate}
+
+\end{questions}
+
+
+%
+% Question 4
+%
+\begin{questions}
+\section{Propositional Logic 4}
+\question
+
+We have defined four binary logical connectives.
+
+\begin{enumerate}[a.]
+	\item Are there any others that might be useful?
+	\item How many binary connectives can there be?
+	\item Why are some of them not very useful?
+\end{enumerate}
+
+\end{questions}
+
+
+%
+% Question 5
+%
+\begin{questions}
+\section{Propositional Logic 5}
+\question
+
+The inference rule \textit{Modus Tollens} is written as follows:
+\begin{align*}
+	\frac{\neg q, p \Rightarrow q}{\neg p}
+\end{align*}
+
+Prove that Modus Tollens is equivalent to Modus Ponens, i.e., the latter can be proved from the former, and the other around.
+
+\end{questions}
+
+%
+% Question 6
+%
+\begin{questions}
+\section{First-Order Logic 1}
+\question
+
+Translate the following sentences in first-order logic:
+
+\begin{enumerate}[a.]
+\item Alice likes everything that Bob dislikes.
+\item Bob doesn't like everything Alice likes.
+\item Charles doesn't like anything Alice likes.
+\item David likes anything everybody else dislikes.
+\item I like writing sentences in first-order logic.
+\item A parent of my sibling is my parent.
+\item A child of my parent, who is not me, is my sibling.
+\end{enumerate}
+
+Try to use a minimum number of predicates, functions, and constants.
+
+\end{questions}
+
+%
+% Question 7
+%
+\begin{questions}
+\section{First-Order Logic 2}
+\question
+
+Translate into good, natural English (no $x$s or $y$s):
+
+$$\forall x,y,l\ SpeaksLanguage(x,l)\wedge SpeaksLanguage(y,l)\Rightarrow Understands(x,y).$$
+
+\end{questions}
+
+
+%
+% Question 8
+%
+\begin{questions}
+\section{First-Order Logic 3}
+\question
+
+Consider a first-order logical knowledge base that describes worlds containing people, songs, albums (e.g., "Meet the Beatles") and disks (i.e., particular physical instances of CDs), The vocabulary contains the following symbols:
+\begin{itemize}
+	\item $CopyOf(d,a)$: Predicate. Disk $d$ is a copy of album $a$.
+	\item $Owns(p, d)$: Predicate. Person $p$ owns disk $d$.
+	\item $Sings(p, s, a)$: Album $a$ includes a recording of song $s$ sung by person $p$. 
+	\item $Wrote(p, s)$: Person $p$ wrote song $s$.
+	\item $McCartney$, $Gersharin$, $BHoliday$, $Joe$, $EleanorRigby$, $TheManILove$, $Revolver$: Constants with the obvious meanings.
+\end{itemize}
+
+Express the following statements in first-order logic:
+\begin{enumerate}[a.]
+	\item Gershwin wrote "The Man I Love."
+	\item Gershwin did not write "Eleanor Rigby."
+	\item Either Gershwin or McCartney wrote "The Man I Love."
+	\item Joe has written at least one song.
+	\item Joe owns a copy of Revolver.
+	\item Every song that McCartney sings on Revolver was written by McCartney.
+	\item Gershwin did not write any of the songs on $Revolver$.
+	\item Every song that Gershwin wrote has been recorded on some album. (Possibly different songs are recorded on different albums.)
+	\item There is a single album that contains every song that Joe has written.
+	\item Joe owns a copy of an album that has Billie Holiday singing "The Man I Love."
+	\item Joe owns a copy of every album that has a song sung by McCartney. (Of course, each different album is instantiated in a different physical CD.)
+	\item Joe owns a copy of every album on which all the songs are sung by Billie Holiday.
+\end{enumerate}
+
+\end{questions}
+
+\end{document}
